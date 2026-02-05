@@ -37,8 +37,8 @@ jobs:
 
     - name: Test with pytest
       run: |
-        conda install -y pytest
-        pytest
+        conda install -y pytest pytest-cov
+        pytest --cov --cov-report=xml
 
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v5
